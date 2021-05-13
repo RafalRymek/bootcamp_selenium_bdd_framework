@@ -5,7 +5,7 @@ Automated selenium tests of http://automationpractice.com/ written in BDD
 ### Following tech stack is using:
 
 python  
-behave 
+behave  
 hamcrest 
 
 ## Setup:  
