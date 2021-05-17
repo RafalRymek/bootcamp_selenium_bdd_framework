@@ -1,23 +1,13 @@
+from behave.runner import Context
 from selenium.webdriver.common.action_chains import ActionChains
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium import webdriver
 
 
 class BasePage:
 
-    class __WebDriver:
-        def __init__(self):
-            self.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-            self.driver.implicitly_wait(3)
-            self.driver.set_window_size(1440, 900)
-
-    driver = None
-
-    def __init__(self):
-        if not self.driver:
-            BasePage.driver = BasePage.__WebDriver().driver
+    def __init__(self, context: Context):
+        self.driver = context.driver
         self.explicity_wait = WebDriverWait(
             driver=self.driver,
             timeout=5
