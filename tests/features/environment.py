@@ -10,7 +10,7 @@ from behave.runner import Context
 def before_all(context: Context):
     # setup global variables
     setup = context.config.userdata
-    context.driver = get_driver(browser=setup["browser"])
+    context.driver = get_driver(browser=setup["browser"], resolution=setup["resolution"])
     # setup page_objects
     context.main_page = MainPage(context=context)
     context.search_page = SearchPage(context=context)
