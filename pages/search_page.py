@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from hamcrest import assert_that, has_string
-from time import sleep
 from pages.base_page import BasePage
 
 
