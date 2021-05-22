@@ -1,7 +1,8 @@
-# Created by rafal.rymek at 13/05/2021
+@registration
 Feature: Registration of new user
   As a unregister user I want to register and create account on the page
 
+  @registration_1
   Scenario: Successful register new user and create new account
     When I click [Sign in] button on the header of the page
     And I input unique email address in registration field

@@ -1,12 +1,10 @@
 from selenium.webdriver.common.by import By
 from hamcrest import assert_that, has_string
-from time import sleep
 from pages.base_page import BasePage
 
 
 class SearchPage(BasePage):
 
-    # __PRODUCT_CONTAINER = (By.XPATH, "//div[@class='product-container']")
     __FIRST_DRESS = (By.XPATH, "//ul[contains(@class,'product_list')]/li[1]")
     __AMOUNT_TEXT = (By.CSS_SELECTOR, ".heading-counter")
     __ADD_TO_CART_BUTTON = (By.XPATH, "//span[text()='Add to cart']")

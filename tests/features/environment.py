@@ -3,18 +3,23 @@ from pages.search_page import SearchPage
 from pages.authentication_page import AuthenticationPage
 from pages.registration_page import RegistrationPage
 from pages.shopping_cart_page import ShoppingCartPage
+from utils.capabilities_utils import get_driver
+from behave.runner import Context
 
 
-def before_all(context):
-
-    context.main_page = MainPage()
-    context.search_page = SearchPage()
-    context.authentication_page = AuthenticationPage()
-    context.registration_page = RegistrationPage()
-    context.shopping_cart_page = ShoppingCartPage()
-
+def before_all(context: Context):
+    # setup global variables
+    setup = context.config.userdata
+    context.driver = get_driver(browser=setup["browser"], resolution=setup["resolution"])
+    # setup page_objects
+    context.main_page = MainPage(context=context)
+    context.search_page = SearchPage(context=context)
+    context.authentication_page = AuthenticationPage(context=context)
+    context.registration_page = RegistrationPage(context=context)
+    context.shopping_cart_page = ShoppingCartPage(context=context)
+    # open application under test
     context.search_page.go_to_url(url="http://automationpractice.com/index.php")
 
 
-def after_all(context):
+def after_all(context: Context):
     context.search_page.quit_driver()

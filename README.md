@@ -7,6 +7,7 @@ Automated selenium tests of http://automationpractice.com/ written in BDD
 python  
 behave  
 hamcrest 
+invoke
 
 ## Setup:  
 1. open terminal
@@ -17,5 +18,8 @@ hamcrest
 
 ## Execution:
 
-to run selenium tests with behave  
-`behave tests/features`
+to run tests with specific parameters:  
+`invoke run --tags=search_1 --browser=CH_HL --resolution=1200x800`
+
+to run all tests without parameters:  
+`invoke run`

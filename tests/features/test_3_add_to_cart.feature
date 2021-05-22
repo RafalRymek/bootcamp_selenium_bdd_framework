@@ -1,9 +1,10 @@
-# Created by rafal.rymek at 13/05/2021
+@add_to_cart
 Feature: Adding product to basket
   As a user I want to add product to basket
 
+  @add_to_cart_1
   Scenario: Add product to basket
-    When I click in search field and input specific 'Dress' text
+    When I search for "Dress" in the searching field
     And hover over mouse on first result
     Then [Add to cart] button is presented and user click on it
     When I move mouse to shopping cart on the header of the page
