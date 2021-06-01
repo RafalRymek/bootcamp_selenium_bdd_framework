@@ -6,7 +6,7 @@ Automated selenium tests of http://automationpractice.com/ written in BDD
 
 python  
 behave  
-hamcrest 
+hamcrest  
 invoke
 
 ## Setup:  
