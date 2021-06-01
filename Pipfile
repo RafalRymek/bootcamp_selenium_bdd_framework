@@ -10,6 +10,7 @@ pyhamcrest = "*"
 selenium = "*"
 webdriver-manager = "*"
 behave = "*"
+allure_behave = "*"
 invoke =  "*"
 
 [requires]

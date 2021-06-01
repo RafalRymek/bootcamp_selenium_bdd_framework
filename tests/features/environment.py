@@ -5,6 +5,7 @@ from pages.registration_page import RegistrationPage
 from pages.shopping_cart_page import ShoppingCartPage
 from utils.capabilities_utils import get_driver
 from behave.runner import Context
+from allure import attach, attachment_type
 
 
 def before_all(context: Context):
@@ -19,6 +20,11 @@ def before_all(context: Context):
     context.shopping_cart_page = ShoppingCartPage(context=context)
     # open application under test
     context.search_page.go_to_url(url="http://automationpractice.com/index.php")
+
+
+def after_scenario(context, scenario):
+    if scenario.status == "failed":
+        attach(context.driver.get.screenshot_as_png(), attachment_type=attachment_type.PNG)
 
 
 def after_all(context: Context):
