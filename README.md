@@ -23,3 +23,14 @@ to run tests with specific parameters:
 
 to run all tests without parameters:  
 `invoke run`
+
+## Docker Execution:
+1. navigate to project directory
+2. run `docker build -t bdd_tests .`
+3. run `docker run -it bdd_tests`
+4. open new terminal 
+5. in new terminal run `docker ps` and find CONTAINER ID
+6. run `docker exec -it [CONTAINER ID] sh`
+7. run `pipenv install`
+8. run `pipenv shell`
+9. to run all tests without parameters run command `invoke run`
