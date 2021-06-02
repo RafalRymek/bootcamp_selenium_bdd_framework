@@ -24,7 +24,7 @@ def before_all(context: Context):
 
 def after_scenario(context, scenario):
     if scenario.status == "failed":
-        attach(context.driver.get.screenshot_as_png(), attachment_type=attachment_type.PNG)
+        attach(context.driver.get_screenshot_as_png(), attachment_type=attachment_type.PNG)
 
 
 def after_all(context: Context):
